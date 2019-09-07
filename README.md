@@ -9,6 +9,12 @@ Finds the Greatest Common Divider between a and b.
 int LCM(int a, int b):
 Finds the Least Common Multiple between a and b.
 
+int[] Factors(int x):
+Returns all factors of the number x.
+
+int[] PrimeFactors(int x):
+Returns list of all prime factors of the number x.
+
 double distanceBetweenPoints(double[] a1, double[] a2):
 Calculates the distance between a1 and a2. a1 and a2 should each be an array of (x,y) coordinates.
 
