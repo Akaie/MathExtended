@@ -87,12 +87,12 @@ namespace MathExpanded
             double factn = 1;
             for(int i = 2; i <= n; i++)
             {
-                factn = factn * i;
+                factn *= i;
             }
             double factrn = 1;
             for(int i=2; i<= (n-r); i++)
             {
-                factrn = factrn * i;
+                factrn *= i;
             }
             return factn / factrn;
         }
@@ -153,9 +153,9 @@ namespace MathExpanded
         {
             return (a/360)*2*Math.PI*r;
         }
-        public static double areaOfCircleSector(double c, double r)
+        public static double areaOfCircleSector(double a, double r)
         {
-            return Math.PI * Math.Pow(r, 2) * (c / 360);
+            return Math.PI * Math.Pow(r, 2) * (a / 360);
         }
         public static double volumeOfBox(double l, double w, double h)
         {
@@ -173,7 +173,7 @@ namespace MathExpanded
         {
             return (4 / 3) * Math.PI * Math.Pow(d/2, 3);
         }
-        public static double volumeOfCylinder(double h, double r)
+        public static double volumeOfCylinder(double r, double h)
         {
             return Math.PI * Math.Pow(r, 2) * h;
         }
