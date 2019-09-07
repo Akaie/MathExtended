@@ -116,11 +116,35 @@ namespace MathExpanded
             }
             return factn / (factr * factrn);
         }
+        //-------------------------------------------Probability and Percent-----------------------------------------
+        public static double Probability(double s, double p)
+        {
+            return s / p;
+        }
+
+        public static double Percent(double? x, double? y, double? p)
+        {
+            if(x is null)
+            {
+                return (double)y / ((double)p/100);
+            }
+            if(y is null)
+            {
+                return ((double)p / 100) * (double)x;
+            }
+            if(p is null)
+            {
+                return (double)y / (double)x;
+            }
+            return 0;
+        }
         //-------------------------------------------Shape operations-----------------------------------------
+        // Triangle
         public static double areaOfTriangle(double b, double h)
         {
             return 0.5 * b * h;
         }
+        //Rectangle
         public static double areaOfRectangle(double l, double w)
         {
             return l * w;
@@ -129,10 +153,7 @@ namespace MathExpanded
         {
             return (2*l) + (2*w);
         }
-        public static double areaOfParallelogram(double b, double h)
-        {
-            return b * h;
-        }
+        //Circle
         public static double areaOfCircleRadius(double r)
         {
             return Math.PI * Math.Pow(r, 2);
@@ -157,6 +178,7 @@ namespace MathExpanded
         {
             return Math.PI * Math.Pow(r, 2) * (a / 360);
         }
+        //3d shapes
         public static double volumeOfBox(double l, double w, double h)
         {
             return l * w * h;
@@ -185,9 +207,14 @@ namespace MathExpanded
         {
             return (1 / 3) * b * h;
         }
+        //Other shapes
         public static double areaOfTrapezoid(double b1, double b2, double h)
         {
             return ((b1 + b2) / 2) * h;
+        }
+        public static double areaOfParallelogram(double b, double h)
+        {
+            return b * h;
         }
         public static double sumOfInteriorAnglesOfPolygon(double n)
         {
@@ -305,6 +332,20 @@ namespace MathExpanded
                     highest = a[i];
             }
             return highest - lowest;
+        }
+        //------------------------------------------Distance/Rate/Time-----------------------------------------
+        public static double distanceGivenRT(double r, double t)
+        {
+            return r * t;
+        }
+        public static double rateGivenDT(double d, double t)
+        {
+            return d / t;
+        }
+
+        public static double timeGivenRD(double d, double r)
+        {
+            return d / r;
         }
     }
 }
