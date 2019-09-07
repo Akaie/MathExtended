@@ -27,6 +27,56 @@ namespace MathExpanded
         {
             return (a * b) / GCD(a, b);
         }
+
+        //------------------------------------------Factoring-----------------------------------------
+        public static int[] Factors(int x)
+        {
+            List<int> l = new List<int>();
+            int count = 1;
+            int p2 = x;
+            while (true)
+            {
+                if (x % count == 0)
+                {
+                    if (p2 == count)
+                    {
+                        break;
+                    }
+                    l.Add(count);
+                    l.Add(x / count);
+                    p2 = x / count;
+
+                }
+                count++;
+            }
+            l.Sort();
+            return l.ToArray();
+        }
+
+        public static int[] PrimeFactors(int x)
+        {
+            List<int> l = new List<int>();
+            while (x % 2 == 0)
+            {
+                l.Add(2);
+                x /= 2;
+            }
+            for (int i = 3; i <= Math.Sqrt(x); i += 2)
+            {
+                while (x % i == 0)
+                {
+                    l.Add(i);
+                    x /= i;
+                }
+            }
+            if (x > 2)
+            {
+                l.Add(x);
+            }
+            l.Sort();
+            return l.ToArray();
+        }
+
         //-------------------------------------------Point calculations-----------------------------------------
         public static double distanceBetweenPoints(double[] a1, double[] a2)
         {
@@ -347,5 +397,7 @@ namespace MathExpanded
         {
             return d / r;
         }
+
+  
     }
 }
