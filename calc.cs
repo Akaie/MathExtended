@@ -6,6 +6,15 @@ namespace MathExpanded
 {
     public static class Calc
     {
+        //-------------------------------------------Geometric and arithmetic-----------------------------------------
+        public static double GeometricSequence(double a, double r, double n)
+        {
+            return a * (1 - Math.Pow(r, n)) / (1 - r);
+        }
+        public static double ArithmeticSequence(double a, double n, double d)
+        {
+            return a + ((n - 1) * d);
+        }
         //-------------------------------------------GCD AND LCM-----------------------------------------
         public static int GCD(int a, int b)
         {
@@ -131,40 +140,36 @@ namespace MathExpanded
         {
             return (x - meanAverage(a)) / standardDeviationFull(a);
         }
-        //-------------------------------------------Perms and Combos-----------------------------------------
-        public static double Permutation(double n, double r)
+        //-------------------------------------------Factorials-----------------------------------------
+        public static int Factorial(int n)
         {
-            double factn = 1;
-            for(int i = 2; i <= n; i++)
+            int factn = 1;
+            for (int i = 2; i <= n; i++)
             {
                 factn *= i;
             }
-            double factrn = 1;
-            for(int i=2; i<= (n-r); i++)
+            return factn;
+        }
+        //-------------------------------------------Perms and Combos-----------------------------------------
+        public static double Permutation(int n, int r)
+        {
+            int ans = 1;
+            for(int i = n; i > (n-r); i--)
             {
-                factrn *= i;
+                ans *= i;
             }
-            return factn / factrn;
+            return ans;
         }
 
-        public static double Combination(double n, double r)
+        public static double Combination(int n, int r)
         {
-            double factn = 1;
-            for(int i=2; i<=n; i++)
+            int ans = 1;
+            for (int i = n; i > (n - r); i--)
             {
-                factn = factn * i;
+                ans *= i;
             }
-            double factr = 1;
-            for(int i = 2; i<=r; i++)
-            {
-                factr = factr * i;
-            }
-            double factrn = 1;
-            for (int i = 2; i <= (n - r); i++)
-            {
-                factrn = factrn * i;
-            }
-            return factn / (factr * factrn);
+            double factr = Factorial(r);
+            return ans / factr;
         }
         //-------------------------------------------Probability and Percent-----------------------------------------
         public static double Probability(double s, double p)
