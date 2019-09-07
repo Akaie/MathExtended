@@ -49,8 +49,10 @@ double Probability(double s, double p):
 Calculates the probability given s successes and p attempts.
 
 double Percent(double? x, double? y, double? p):
-Calculates the missing value for the percent equation x/y = p. x is the fraction, y is the whole, p is the percent.
-Pass a null for the missing value. For example: what is 16% of 60 would be passed as Percent(null, 60, 16).
+Calculates the missing value for the percent equation x/y = p. x is the whole, y is the fraction, p is the percent.
+Pass a null for the missing value. For example: what is 16% of 60 would be passed as Percent(null, 60, 16). If all
+three values are filled in, the function automatically returns y / x. if more then one space is null, it will return
+a -1.
 
 double areaOfTriangle(double b, double h):
 Calculates the area of a triangle with a base of b and a height of h.
@@ -137,3 +139,11 @@ Calculates the median average of the set of data a.
 
 double rangeAverage(double[] a):
 Calculates the range of the data set a.
+
+double distanceGivenRT(double r, double t):
+Calculates the Distance given the rate r, and time t.
+
+double DistanceRateTime(double? r, double? t, double? d):
+Calculates the missing value for the d = r x t equation. One value should be set to null as the value to be solved. If
+all three values are set, the function will automatically return r x t. If more then one value is set to null, the function
+will return a -1.
