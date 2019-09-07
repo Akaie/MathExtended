@@ -1,7 +1,9 @@
 # MathExtended
 A library of various math functions created as a DLL. Each function is listed as such:
-<type returned> <function name>(<input values>):
-<short descriptions>
+
+[type returned] [function name]([input values]):
+
+[short descriptions]
 
 int GCD(int a, int b):
 Finds the Greatest Common Divider between a and b.
