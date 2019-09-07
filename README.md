@@ -3,6 +3,12 @@ A library of various math functions created as a DLL. Each function is listed as
 
 [type returned] [function name]([input values]): [short descriptions]
 
+double GeometricSequence(double a, double r, double n):
+Calculates the Geometric Sequence where a is is the starting term, r is the rate of growth, and n is the desired nth position in the sequence.
+
+double ArithmeticSequence(double a, double n, double d):
+Calculates the Arithmetic Sequence where a is the starting term, n is the desired nth position in the sequence and d is the growth of the sequence.
+
 int GCD(int a, int b):
 Finds the Greatest Common Divider between a and b.
 
@@ -38,6 +44,9 @@ Calculates the z-score of a normal distribution given a value x, the mean of m, 
 
 double zScoureWithValues(double x, double[] a):
 Calculates the z-score of a normal distribution given the value x and the set of data a.
+
+int Factorial(int n):
+Calculates n!.
 
 double Permutation(double n, double r):
 Calculates P(n,r).
