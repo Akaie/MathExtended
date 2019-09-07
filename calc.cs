@@ -176,17 +176,19 @@ namespace MathExpanded
         {
             if(x is null)
             {
+                if (y is null || p is null)
+                    return -1;
                 return (double)y / ((double)p/100);
             }
             if(y is null)
             {
+                if (p is null || x is null)
+                    return -1;
                 return ((double)p / 100) * (double)x;
             }
-            if(p is null)
-            {
-                return (double)y / (double)x;
-            }
-            return 0;
+            if (y is null || x is null)
+                return -1;
+            return (double)y / (double)x;
         }
         //-------------------------------------------Shape operations-----------------------------------------
         // Triangle
@@ -384,20 +386,23 @@ namespace MathExpanded
             return highest - lowest;
         }
         //------------------------------------------Distance/Rate/Time-----------------------------------------
-        public static double distanceGivenRT(double r, double t)
+        public static double DistanceRateTime(double? r, double? t, double? d)
         {
-            return r * t;
+            if (r is null)
+            {
+                if (d is null || t is null)
+                    return -1;
+                return (double)d / (double)t;
+            }
+            if(t is null)
+            {
+                if (d is null || r is null)
+                    return -1;
+                return (double)d / (double)r;
+            }
+            if (r is null || t is null)
+                return -1;
+            return (double)r * (double)t;
         }
-        public static double rateGivenDT(double d, double t)
-        {
-            return d / t;
-        }
-
-        public static double timeGivenRD(double d, double r)
-        {
-            return d / r;
-        }
-
-  
     }
 }
