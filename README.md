@@ -39,6 +39,13 @@ Calculates P(n,r).
 double Combination(double n, double r):
 Calculates C(n,r).
 
+double Probability(double s, double p):
+Calculates the probability given s successes and p attempts.
+
+double Percent(double? x, double? y, double? p):
+Calculates the missing value for the percent equation x/y = p. x is the fraction, y is the whole, p is the percent.
+Pass a null for the missing value. For example: what is 16% of 60 would be passed as Percent(null, 60, 16).
+
 double areaOfTriangle(double b, double h):
 Calculates the area of a triangle with a base of b and a height of h.
 
@@ -47,9 +54,6 @@ Calculates the area of a rectangle with the length of l and the width of w.
 
 double perimeterOfRectangle(double l, double w):
 Calculates the perimeter of a rectangle with the length of l and the width of w.
-
-double areaOfParallelgram(double b, double h):
-Calculates the area of a parallelogram with the base of b and the height of h.
 
 double areaOfCircleRadius(double r):
 Calculates the area of a circle given the radius r.
@@ -92,6 +96,9 @@ Calculates the volume of a pyramid given the base b and the height h.
 
 double areaOfTrapezoid(double b1, double b2, double h):
 Calculates the area of a Trapezoid given the bases b1 and b2 and the height h.
+
+double areaOfParallelgram(double b, double h):
+Calculates the area of a parallelogram with the base of b and the height of h.
 
 double sumOfInteriorAnglesOfPolygon(double n):
 Calculates the interior sum of angles of a polygon given the number of angles n.
