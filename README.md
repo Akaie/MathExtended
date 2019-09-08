@@ -27,6 +27,14 @@ Gives the compliment of a given the universal set s.
 
 Subracts set b from set a.
 
+**bool IsDisjointSet(double[] a, double[] b):**
+
+Checks if a and b are disjoint sets.
+
+**bool AreEqualSets(double[] a, double[] b)**
+
+Checks if a and b are equal sets.
+
 ## Sequencing
 
 **double GeometricSequence(double a, double r, double n):**
