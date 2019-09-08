@@ -204,13 +204,98 @@ namespace MathExpanded
                 if (m[i].Length != m[i + 1].Length)
                     return null;
             }
-            double? hol = MatrixDeterminant(m);
-            if (hol == null)
-                return null;
-            return MultiplyMatrixByNumber(1 / (double)hol, m);
+            double[][] m1 = new double[m.Length][];
+            for (int i = 0; i < m.Length; i++)
+            {
+                m1[i] = new double[m[i].Length];
+            }
+            for (int i = 0; i < m.Length; i++)
+            {
+                for (int j = 0; j < m.Length; j++)
+                {
+                    int track1 = 0;
+                    double[][] mhol = new double[m.Length - 1][];
+                    for (int k = 0; k < mhol.Length; k++)
+                        mhol[k] = new double[m[0].Length - 1];
+                    for (int k = 0; k < m.Length; k++)
+                    {
+                        int track2 = 0;
+                        if (k == i)
+                            continue;
+                        for (int l = 0; l < m[k].Length; l++)
+                        {
+                            if (l == j)
+                            {
+                                continue;
+                            }
+                            mhol[track1][track2] = m[k][l];
+                            track2++;
+                        }
+                        track1++;
+                    }
+                    m1[i][j] = (double)MatrixDeterminant(mhol);
+                }
+            }
+            double[][] cofactor = new double[m.Length][];
+            int a = 1;
+            for (int i = 0; i < m.Length; i++)
+            {
+                cofactor[i] = new double[m[i].Length];
+                if (i % 2 == 1)
+                    a = 1;
+                else
+                    a = 0;
+                for (int j = 0; j < m[i].Length; j++)
+                {
+                    cofactor[i][j] = 1 * Math.Pow(-1, j + a);
+                }
+            }
+            for (int x = 0; x < m1.Length; x++)
+            {
+                for (int y = 0; y < m1[x].Length; y++)
+                {
+                    m1[x][y] = m1[x][y] * cofactor[x][y];
+                }
+            }
+            double[][] m2 = new double[m.Length][];
+            for (int i = 0; i < m.Length; i++)
+            {
+                m2[i] = new double[m[i].Length];
+            }
+            for (int i = 0; i < m.Length; i++)
+            {
+                for (int j = 0; j < m[i].Length; j++)
+                {
+                    m2[j][i] = m1[i][j];
+                }
+            }
+            return MultiplyMatrixByNumber(1 / (double)MatrixDeterminant(m), m2);
         }
-        //-------------------------------------------GCD AND LCM-----------------------------------------
-        public static int GCD(int a, int b)
+        //-------------------------------------------Equation Solving-----------------------------------------
+        public static double[][] SolveByMatrix(double[][] m, double[][] a)
+        {
+            if (m.Length == 0 || a.Length == 0)
+                return null;
+            if (m.Length != a.Length)
+                return null;
+            for (int i = 0; i < m.Length - 1; i++)
+            {
+                if (m[i].Length != m[i + 1].Length)
+                    return null;
+            }
+            for (int i = 0; i < a.Length; i++)
+            {
+                if (a[i].Length != 1)
+                    return null;
+            }
+            double[][] minverse = InverseMatrix(m);
+            if (minverse == null)
+                return null;
+            double[][] ans = MultiplyMatrices(minverse, a);
+            return ans;
+        }
+    //-------------------------------------------GCD AND LCM-----------------------------------------
+    public static int GCD(int a, int b)
         {
             if (a == 0)
                 return b;
