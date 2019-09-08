@@ -5,7 +5,34 @@ using System.Collections.Generic;
 namespace MathExpanded
 {
     public static class Calc
-    {
+    {   //-----------------------------------------Set Operations--------------------------------------
+        public static double[] UnionSet(double[] a, double[] b)
+        {
+            List<double> l = new List<double>();
+            for(int i = 0; i < a.Length; i++)
+            {
+                l.Add(a[i]);
+            }
+            for(int i = 0; i < b.Length; i++)
+            {
+                if(!l.Contains(b[i]))
+                {
+                    l.Add(b[i]);
+                }
+            }
+            return l.ToArray();
+        }
+
+        public static double[] IntersectionSet(double[] a, double[] b)
+        {
+            List<double> bl = new List<double>(b);
+            List<double> l = new List<double>;
+            for (int i = 0; i < a.Length; i++) {
+                if (bl.Contains(a[i]))
+                    l.Add(a[i]);
+            }
+            return l.ToArray();
+        }
         //-------------------------------------------Geometric and arithmetic----------------------------
         public static double GeometricSequence(double a, double r, double n)
         {
@@ -447,7 +474,7 @@ namespace MathExpanded
             {
                 ans *= i;
             }
-            double factr = Factorial(r);
+            int factr = Factorial(r);
             return ans / factr;
         }
         //-------------------------------------------Probability and Percent-----------------------------------------
