@@ -6,7 +6,7 @@ namespace MathExpanded
 {
     public static class Calc
     {
-        //-------------------------------------------Geometric and arithmetic-----------------------------------------
+        //-------------------------------------------Geometric and arithmetic----------------------------
         public static double GeometricSequence(double a, double r, double n)
         {
             return a * (1 - Math.Pow(r, n)) / (1 - r);
@@ -14,6 +14,200 @@ namespace MathExpanded
         public static double ArithmeticSequence(double a, double n, double d)
         {
             return a + ((n - 1) * d);
+        }
+        //------------------------------------------Matrix Operations------------------------------------
+        public static double[][] AddMatrix(double[][] x, double[][] y)
+        {
+            if (x.Length != y.Length)
+            {
+                return null;
+            }
+            for (int i = 0; i < x.Length; i++)
+            {
+                if (x[i].Length != y[i].Length)
+                {
+                    return null;
+                }
+            }
+            if (x.Length == 0 || y.Length == 0 || x[0].Length == 0 || y[0].Length == 0)
+            {
+                return null;
+            }
+            for(int i=0; i<x.Length-1; i++)
+            {
+                if (x[i].Length != x[i + 1].Length)
+                    return null;
+            }
+            for (int i = 0; i < y.Length - 1; i++)
+            {
+                if (y[i].Length != y[i + 1].Length)
+                    return null;
+            }
+            double[][] ans = new double[x.Length][];
+            for (int i = 0; i < x.Length; i++)
+            {
+                ans[i] = new double[i];
+                for (int ii = 0; ii < x[i].Length; ii++)
+                {
+                    ans[i][ii] = x[i][ii] + y[i][ii];
+                }
+            }
+            return ans;
+        }
+
+        public static double[][] SubtractMatrix(double[][] x, double[][] y)
+        {
+            if (x.Length != y.Length)
+            {
+                return null;
+            }
+            for (int i = 0; i < x.Length; i++)
+            {
+                if (x[i].Length != y[i].Length)
+                {
+                    return null;
+                }
+            }
+            if(x.Length == 0 || y.Length == 0 || x[0].Length == 0 || y[0].Length==0)
+            {
+                return null;
+            }
+            for (int i = 0; i < x.Length - 1; i++)
+            {
+                if (x[i].Length != x[i + 1].Length)
+                    return null;
+            }
+            for (int i = 0; i < y.Length - 1; i++)
+            {
+                if (y[i].Length != y[i + 1].Length)
+                    return null;
+            }
+            double[][] ans = new double[x.Length][];
+            for (int i = 0; i < x.Length; i++)
+            {
+                ans[i] = new double[i];
+                for (int ii = 0; ii < x[i].Length; ii++)
+                {
+                    ans[i][ii] = x[i][ii] - y[i][ii];
+                }
+            }
+            return ans;
+        }
+        public static double[][] MultiplyMatrixByNumber(double n, double[][] m)
+        {
+            if (m.Length == 0)
+                return null;
+            for (int i = 0; i < m.Length - 1; i++)
+            {
+                if (m[i].Length != m[i + 1].Length)
+                    return null;
+            }
+            double[][] ans = new double[m.Length][];
+
+            for(int i=0; i<m.Length; i++ )
+            {
+                ans[i] = new double[m[0].Length];
+                for(int j=0; j<m[0].Length; j++ )
+                {
+                    ans[i][j] = m[i][j] * n;
+                }
+            }
+            return ans;
+        }
+        public static double[][] MultiplyMatrices(double[][] x, double[][] y)
+        {
+            if (x.Length == 0 || y.Length == 0 || x[0].Length == 0 || y[0].Length == 0)
+            {
+                return null;
+            }
+            if (x[0].Length != y.Length)
+            {
+                return null;
+            }
+            for (int i = 0; i < x.Length - 1; i++)
+            {
+                if (x[i].Length != x[i + 1].Length)
+                    return null;
+            }
+            for (int i = 0; i < y.Length - 1; i++)
+            {
+                if (y[i].Length != y[i + 1].Length)
+                    return null;
+            }
+            double[][] ans = new double[x.Length][];
+            for (int i = 0; i < x.Length; i++)
+            {
+                ans[i] = new double[y[0].Length];
+                for (int j = 0; j < y[0].Length; j++)
+                {
+                    ans[i][j] = 0;
+                    for (int k = 0; k < x[0].Length; k++)
+                    {
+                        ans[i][j] += x[i][k] * y[k][j];
+                    }
+                }
+            }
+            return ans;
+        }
+
+        public static double? MatrixDeterminant(double[][] m)
+        {
+            if (m.Length == 0)
+                return null;
+            if (m.Length != m[0].Length)
+                return null;
+            for (int i = 0; i < m.Length - 1; i++)
+            {
+                if (m[i].Length != m[i + 1].Length)
+                    return null;
+            }
+            if (m.Length == 2)
+            {
+                return m[0][0] * m[1][1] - m[0][1] * m[1][0];
+            }
+            else
+            {
+                double? det = 0;
+                for (int i = 0; i < m.Length; i++)
+                {
+                    double[][] m1 = new double[m.Length - 1][];
+                    for (int j = 0; j < m.Length - 1; j++)
+                    {
+                        m1[j] = new double[m.Length - 1];
+                    }
+                    for (int j = 1; j < m.Length; j++)
+                    {
+                        int track = 0;
+                        for (int k = 0; k < m.Length; k++)
+                        {
+                            if (k == i)
+                                continue;
+                            m1[j - 1][track] = m[j][k];
+                            track++;
+
+                        }
+                    }
+                    det += Math.Pow(-1, i) * m[0][i] * MatrixDeterminant(m1);
+                }
+                return det;
+            }
+        }
+
+        public static double[][] InverseMatrix(double[][] m)
+        {
+            if (m.Length == 0)
+                return null;
+            if (m.Length != m[0].Length)
+                return null;
+            for (int i = 0; i < m.Length - 1; i++)
+            {
+                if (m[i].Length != m[i + 1].Length)
+                    return null;
+            }
+            double? hol = MatrixDeterminant(m);
+            if (hol == null)
+                return null;
+            return MultiplyMatrixByNumber(1 / (double)hol, m);
         }
         //-------------------------------------------GCD AND LCM-----------------------------------------
         public static int GCD(int a, int b)
