@@ -271,6 +271,15 @@ If Object[2] is true, the answers are imaginary and Object[0] is the real portio
 
 If Object[2] is false, the answers are real and Object[0] and Object[1] are each possible answers.
 
+## Fraction Operations
+**int[] DecimalToFraction(double x):**
+
+Returns the the decimal x in a fractional version with the numerator being int[0] and the demoninator being int[1];
+
+**double FractionToDecimal(int[] x):**
+
+Returns the fraction x with the numerator being x[0] and denominator being x[1] as a decimal.
+
 **double Discrimiant(double a, double b, double c):**
 
 Calculates the discrimiant of a quadratic equation given the form ax^2 + bx + c = 0.
