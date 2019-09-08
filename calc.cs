@@ -26,7 +26,7 @@ namespace MathExpanded
         public static double[] IntersectionSet(double[] a, double[] b)
         {
             List<double> bl = new List<double>(b);
-            List<double> l = new List<double>;
+            List<double> l = new List<double>();
             for (int i = 0; i < a.Length; i++) {
                 if (bl.Contains(a[i]))
                     l.Add(a[i]);
