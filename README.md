@@ -5,7 +5,7 @@ A library of various math functions created as a DLL. Each function is listed as
 
 [short descriptions]
 
-# Sequencing
+## Sequencing
 
 **double GeometricSequence(double a, double r, double n):**
 
@@ -15,7 +15,7 @@ Calculates the Geometric Sequence where a is is the starting term, r is the rate
 
 Calculates the Arithmetic Sequence where a is the starting term, n is the desired nth position in the sequence and d is the growth of the sequence.
 
-# Matrix Operations
+## Matrix Operations
 
 **double[][] AddMatrix(double[][] x, double[][] y):**
 
@@ -41,7 +41,7 @@ Finds the Determient of the matrix m. Will return null if matrix is 0, or matrix
 
 Finds the inverse matrix of the matrix m. Will return null if matrix is 0 or matrix does not have a determient.
 
-# Equation Solving
+## Equation Solving
 
 **double[][] SolveByMatrix(double[][] m, double[][] a):**
 
@@ -53,7 +53,7 @@ m = { {1, 1, 1}, {0, 2, 5}, {2, 5, -1} }
 
 a = { {6}, {-4}, {27} }
 
-# Greatest Common Divider and Least Common Multiple
+## Greatest Common Divider and Least Common Multiple
 
 **int GCD(int a, int b):**
 
@@ -63,7 +63,7 @@ Finds the Greatest Common Divider between a and b.
 
 Finds the Least Common Multiple between a and b.
 
-# Factoring
+## Factoring
 
 **int[] Factors(int x):**
 
@@ -73,7 +73,7 @@ Returns all factors of the number x.
 
 Returns list of all prime factors of the number x.
 
-# Point Operations
+## Point Operations
 
 **double distanceBetweenPoints(double[] a1, double[] a2):**
 
@@ -91,7 +91,7 @@ Calculates the midpoint of the line between the points a1 and a2. a1 and a2 shou
 
 Calculates the slope and y-intercept given the two points a1 and a2. Returns slope as double[0] and y-intercept as double[1].
 
-# Statistic Operations
+## Statistic Operations
 **double standardDeviationFull(double[] m):**
 
 Calculates the standard deviation for a set of complete data.
@@ -109,12 +109,12 @@ Calculates the z-score of a normal distribution given a value x, the mean of m, 
 Calculates the z-score of a normal distribution given the value x and the set of data a.
 
 
-# Factorial
+## Factorial
 **int Factorial(int n):**
 
 Calculates n!.
 
-# Permutation and Combinations
+## Permutation and Combinations
 **int Permutation(double n, double r):**
 
 Calculates P(n,r).
@@ -123,7 +123,7 @@ Calculates P(n,r).
 
 Calculates C(n,r).
 
-# Probability and Percent
+## Probability and Percent
 **double Probability(double s, double p):**
 
 Calculates the probability given s successes and p attempts.
@@ -135,11 +135,16 @@ Pass a null for the missing value. For example: what is 16% of 60 would be passe
 three values are filled in, the function automatically returns y / x. if more then one space is null, it will return
 a -1.
 
-# Shape Operations
+## Shape Operations
+
+### Triangle
+
 **double areaOfTriangle(double b, double h):**
 
 Calculates the area of a triangle with a base of b and a height of h.
 
+
+### Rectangle
 **double areaOfRectangle(double l, double w):**
 
 Calculates the area of a rectangle with the length of l and the width of w.
@@ -148,6 +153,8 @@ Calculates the area of a rectangle with the length of l and the width of w.
 
 Calculates the perimeter of a rectangle with the length of l and the width of w.
 
+
+### Circle
 **double areaOfCircleRadius(double r):**
 
 Calculates the area of a circle given the radius r.
@@ -172,6 +179,8 @@ Calculates the length of an arc of a circle given the angle a and the radius r.
 
 Calculates the area of a sector of a circle given the angle a and the radius r.
 
+
+### 3d shapes
 **double volumeOfBox(double l, double w, double h):**
 
 Calculates the volcume of a box given the length of l, the width of w, and the height of h.
@@ -188,6 +197,8 @@ Calculates the volume of a sphere given the radius r.
 
 Calculates the volume of a sphere given the diameter d.
 
+
+### Other shapes
 **double volumeOfCylinder(double r, double h):**
 
 Calculates the volume of a Cylinder given the radius r and the height h.
@@ -212,7 +223,7 @@ Calculates the area of a parallelogram with the base of b and the height of h.
 
 Calculates the interior sum of angles of a polygon given the number of angles n.
 
-# Pythagorean Theorem
+## Pythagorean Theorem
 **double pythMissingAorB(double ab, double c):**
 
 Calculates the missing length of a triangle of the formula a^2 + b^2 = c^2 when a or b is missing.
@@ -238,7 +249,7 @@ Calculates the discrimiant of a quadratic equation given the form ax^2 + bx + c 
 
 Calculates the vertex of a parabola given the form ax^2 + bx + c = 0.
 
-# Averages
+## Averages
 **double meanAverage(double[] a):**
 
 Calculates the mean average of the set of data a.
@@ -255,6 +266,7 @@ Calculates the median average of the set of data a.
 
 Calculates the range of the data set a.
 
+## Distance Rate and Time
 **double DistanceRateTime(double? r, double? t, double? d):**
 
 Calculates the missing value for the d = r x t equation. One value should be set to null as the value to be solved. If
