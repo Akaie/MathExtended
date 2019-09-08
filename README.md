@@ -27,6 +27,9 @@ Finds the Determient of the matrix m. Will return null if matrix is 0, or matrix
 double[][] InverseMatrix(double[][] m):
 Finds the inverse matrix of the matrix m. Will return null if matrix is 0 or matrix does not have a determient.
 
+double[][] SolveByMatrix(double[][] m, double[][] a):
+Calculates the solution to an equation using the matrix method. Will return null if the equation can't be solved.
+
 int GCD(int a, int b):
 Finds the Greatest Common Divider between a and b.
 
