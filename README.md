@@ -5,6 +5,8 @@ A library of various math functions created as a DLL. Each function is listed as
 
 [short descriptions]
 
+#Sequencing
+
 **double GeometricSequence(double a, double r, double n):**
 
 Calculates the Geometric Sequence where a is is the starting term, r is the rate of growth, and n is the desired nth position in the sequence.
@@ -12,6 +14,8 @@ Calculates the Geometric Sequence where a is is the starting term, r is the rate
 **double ArithmeticSequence(double a, double n, double d):**
 
 Calculates the Arithmetic Sequence where a is the starting term, n is the desired nth position in the sequence and d is the growth of the sequence.
+
+#Matrix Operations
 
 **double[][] AddMatrix(double[][] x, double[][] y):**
 
@@ -47,6 +51,7 @@ m = { {1, 1, 1}, {0, 2, 5}, {2, 5, -1} }
 
 a = { {6}, {-4}, {27} }
 
+# Greatest Common Divider and Least Common Multiple
 
 **int GCD(int a, int b):**
 
@@ -55,6 +60,8 @@ Finds the Greatest Common Divider between a and b.
 **int LCM(int a, int b):**
 
 Finds the Least Common Multiple between a and b.
+
+#Factoring
 
 **int[] Factors(int x):**
 
