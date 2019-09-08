@@ -100,11 +100,11 @@ Calculates the z-score of a normal distribution given the value x and the set of
 
 Calculates n!.
 
-**double Permutation(double n, double r):**
+**int Permutation(double n, double r):**
 
 Calculates P(n,r).
 
-**double Combination(double n, double r):**
+**int Combination(double n, double r):**
 
 Calculates C(n,r).
 
