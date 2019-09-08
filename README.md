@@ -5,7 +5,7 @@ A library of various math functions created as a DLL. Each function is listed as
 
 [short descriptions]
 
-#Sequencing
+# Sequencing
 
 **double GeometricSequence(double a, double r, double n):**
 
@@ -15,7 +15,7 @@ Calculates the Geometric Sequence where a is is the starting term, r is the rate
 
 Calculates the Arithmetic Sequence where a is the starting term, n is the desired nth position in the sequence and d is the growth of the sequence.
 
-#Matrix Operations
+# Matrix Operations
 
 **double[][] AddMatrix(double[][] x, double[][] y):**
 
@@ -41,6 +41,8 @@ Finds the Determient of the matrix m. Will return null if matrix is 0, or matrix
 
 Finds the inverse matrix of the matrix m. Will return null if matrix is 0 or matrix does not have a determient.
 
+# Equation Solving
+
 **double[][] SolveByMatrix(double[][] m, double[][] a):**
 
 Calculates the solution to an equation using the matrix method. Will return null if the equation can't be solved. Equation Matrix m must be horizontal and answer a matrix must be vertical. Given the equation set x + y + z = 6, 2y + 5z = -4, and 2x + 5y - z = 27, the matrix should be as followed
@@ -61,7 +63,7 @@ Finds the Greatest Common Divider between a and b.
 
 Finds the Least Common Multiple between a and b.
 
-#Factoring
+# Factoring
 
 **int[] Factors(int x):**
 
@@ -70,6 +72,8 @@ Returns all factors of the number x.
 **int[] PrimeFactors(int x):**
 
 Returns list of all prime factors of the number x.
+
+# Point Operations
 
 **double distanceBetweenPoints(double[] a1, double[] a2):**
 
@@ -87,6 +91,7 @@ Calculates the midpoint of the line between the points a1 and a2. a1 and a2 shou
 
 Calculates the slope and y-intercept given the two points a1 and a2. Returns slope as double[0] and y-intercept as double[1].
 
+# Statistic Operations
 **double standardDeviationFull(double[] m):**
 
 Calculates the standard deviation for a set of complete data.
@@ -103,10 +108,13 @@ Calculates the z-score of a normal distribution given a value x, the mean of m, 
 
 Calculates the z-score of a normal distribution given the value x and the set of data a.
 
+
+# Factorial
 **int Factorial(int n):**
 
 Calculates n!.
 
+# Permutation and Combinations
 **int Permutation(double n, double r):**
 
 Calculates P(n,r).
@@ -115,6 +123,7 @@ Calculates P(n,r).
 
 Calculates C(n,r).
 
+# Probability and Percent
 **double Probability(double s, double p):**
 
 Calculates the probability given s successes and p attempts.
@@ -126,6 +135,7 @@ Pass a null for the missing value. For example: what is 16% of 60 would be passe
 three values are filled in, the function automatically returns y / x. if more then one space is null, it will return
 a -1.
 
+# Shape Operations
 **double areaOfTriangle(double b, double h):**
 
 Calculates the area of a triangle with a base of b and a height of h.
@@ -202,6 +212,7 @@ Calculates the area of a parallelogram with the base of b and the height of h.
 
 Calculates the interior sum of angles of a polygon given the number of angles n.
 
+# Pythagorean Theorem
 **double pythMissingAorB(double ab, double c):**
 
 Calculates the missing length of a triangle of the formula a^2 + b^2 = c^2 when a or b is missing.
@@ -210,6 +221,7 @@ Calculates the missing length of a triangle of the formula a^2 + b^2 = c^2 when 
 
 Calculates the missing length of a triangle of the formula a^2 + b^2 = c^2 when c is missing.
 
+# Quadratic Operations
 **Object[] quadraticEquation(double a, double b, double c):**
 
 Calculates the result of a quadrati Equation using the quadratic formula given the form ax^2 + bx + c = 0. 
@@ -226,6 +238,7 @@ Calculates the discrimiant of a quadratic equation given the form ax^2 + bx + c 
 
 Calculates the vertex of a parabola given the form ax^2 + bx + c = 0.
 
+# Averages
 **double meanAverage(double[] a):**
 
 Calculates the mean average of the set of data a.
