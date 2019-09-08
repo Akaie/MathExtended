@@ -232,7 +232,7 @@ Calculates the missing length of a triangle of the formula a^2 + b^2 = c^2 when 
 
 Calculates the missing length of a triangle of the formula a^2 + b^2 = c^2 when c is missing.
 
-# Quadratic Operations
+## Quadratic Operations
 **Object[] quadraticEquation(double a, double b, double c):**
 
 Calculates the result of a quadrati Equation using the quadratic formula given the form ax^2 + bx + c = 0. 
