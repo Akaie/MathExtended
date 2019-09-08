@@ -1,24 +1,29 @@
 using System;
-using System.Numerics;
 using System.Collections.Generic;
 
 namespace MathExpanded
 {
     public static class Calc
     {   //-----------------------------------------Set Operations--------------------------------------
-        public static double[] UnionSet(double[] a, double[] b)
+        public static double[] ArrayToSet(double[] a)
         {
             List<double> l = new List<double>();
             for(int i = 0; i < a.Length; i++)
             {
+                if (l.Contains(a[i]))
+                    continue;
                 l.Add(a[i]);
             }
+            return l.ToArray();
+        }
+        public static double[] UnionSet(double[] a, double[] b)
+        {
+            List<double> l = new List<double>(a);
             for(int i = 0; i < b.Length; i++)
             {
-                if(!l.Contains(b[i]))
-                {
-                    l.Add(b[i]);
-                }
+                if (l.Contains(b[i]))
+                    continue;
+                l.Add(b[i]);
             }
             return l.ToArray();
         }
@@ -32,6 +37,43 @@ namespace MathExpanded
                     l.Add(a[i]);
             }
             return l.ToArray();
+        }
+
+        public static double[] ComplimentSet(double[] s, double[] a)
+        {
+            List<double> al = new List<double>(a);
+            List<double> l = new List<double>();
+            for (int i=0; i < s.Length; i++)
+            {
+                if(!al.Contains(s[i])) {
+                    l.Add(s[i]);
+                }
+            }
+            return l.ToArray();
+        }
+
+        public static double[] SubtractSet(double[] a, double[] b)
+        {
+            List<double> l = new List<double>(a);
+            for(int i = 0; i<b.Length; i++)
+            {
+                if(l.Contains(b[i]))
+                {
+                    l.Remove(b[i]);
+                }
+            }
+            return l.ToArray();
+        }
+
+        public static bool IsDisjointSet(double[] a, double[] b)
+        {
+            List<double> l = new List<double>(a);
+            for(int i = 0; i < b.Length; i++)
+            {
+                if (l.Contains(b[i]))
+                    return false;
+            }
+            return true;
         }
         //-------------------------------------------Geometric and arithmetic----------------------------
         public static double GeometricSequence(double a, double r, double n)
