@@ -430,7 +430,7 @@ namespace MathExpanded
             return factn;
         }
         //-------------------------------------------Perms and Combos-----------------------------------------
-        public static double Permutation(int n, int r)
+        public static int Permutation(int n, int r)
         {
             int ans = 1;
             for(int i = n; i > (n-r); i--)
@@ -440,7 +440,7 @@ namespace MathExpanded
             return ans;
         }
 
-        public static double Combination(int n, int r)
+        public static int Combination(int n, int r)
         {
             int ans = 1;
             for (int i = n; i > (n - r); i--)
