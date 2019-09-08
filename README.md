@@ -9,6 +9,24 @@ Calculates the Geometric Sequence where a is is the starting term, r is the rate
 double ArithmeticSequence(double a, double n, double d):
 Calculates the Arithmetic Sequence where a is the starting term, n is the desired nth position in the sequence and d is the growth of the sequence.
 
+double[][] AddMatrix(double[][] x, double[][] y):
+Adds the matrices x and y together. Will return null of the matrices can't be added.
+
+double[][] SubtractMatrix(double[][] x, double[][] y):
+Subtracts matrix y from matrix x. Will return null if matrices can't be subtracted.
+
+double[][] MultiplyMatrixByNumber(double n, double[][] m):
+Multiplies the matrix m by the coefficent n. Will return null if matrix size is 0.
+
+double[][] MultiplyMatrices(double[][] x, double[][] y):
+Multiples the matrices x and y together. Will return null if one of the matrixes is 0 or if multiplication can't be done.
+
+double? MatrixDetermient(double[][] m):
+Finds the Determient of the matrix m. Will return null if matrix is 0, or matrix is not square.
+
+double[][] InverseMatrix(double[][] m):
+Finds the inverse matrix of the matrix m. Will return null if matrix is 0 or matrix does not have a determient.
+
 int GCD(int a, int b):
 Finds the Greatest Common Divider between a and b.
 
