@@ -402,22 +402,10 @@ namespace MathExpanded
         public static int[] Factors(int x)
         {
             List<int> l = new List<int>();
-            int count = 1;
-            int p2 = x;
-            while (true)
+            for (int i = 1; i < Math.Sqrt(x); i++)
             {
-                if (x % count == 0)
-                {
-                    if (p2 == count)
-                    {
-                        break;
-                    }
-                    l.Add(count);
-                    l.Add(x / count);
-                    p2 = x / count;
-
-                }
-                count++;
+                if (x % i == 0)
+                    l.Add(i);
             }
             l.Sort();
             return l.ToArray();
@@ -680,6 +668,27 @@ namespace MathExpanded
             ans[0] = (-b) / (2 * a);
             ans[1] = (-Discriminant(a,b,c)) / (4*a);
             return ans;
+        }
+
+        //------------------------------------------Fractions---------------------------------------
+        public static int[] DecimalToFraction(double x)
+        {
+            int count = 0;
+            while (x % 1 != 0)
+            {
+                x *= 10;
+                count++;
+            }
+            int b = (int)Math.Pow(10, count);
+            int g = GCD((int)x, b);
+            b = b / g;
+            x = x / g;
+            return new int[] { (int)x, b };
+        }
+
+        public static double FractionToDecimal(int[] x)
+        {
+            return x[0] / x[1];
         }
         //------------------------------------------Averages-----------------------------------------
         public static double meanAverage(double[] a)
