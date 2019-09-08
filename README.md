@@ -1,7 +1,7 @@
 # MathExtended
 A library of various math functions created as a DLL. Each function is listed as such:
 
-[type returned] [function name]([input values]): 
+**[type returned] [function name]([input values]):**
 
 [short descriptions]
 
