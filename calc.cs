@@ -75,6 +75,19 @@ namespace MathExpanded
             }
             return true;
         }
+
+        public static bool AreEqualSets(double[] a, double[] b)
+        {
+            if (a.Length != b.Length)
+                return false;
+            List<double> l = new List<double>(a);
+            for (int i = 0; i < b.Length; i++)
+            {
+                if (!l.Contains(b[i]))
+                    return false;
+            }
+            return true;
+        }
         //-------------------------------------------Geometric and arithmetic----------------------------
         public static double GeometricSequence(double a, double r, double n)
         {
