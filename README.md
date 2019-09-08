@@ -28,8 +28,9 @@ double[][] InverseMatrix(double[][] m):
 Finds the inverse matrix of the matrix m. Will return null if matrix is 0 or matrix does not have a determient.
 
 double[][] SolveByMatrix(double[][] m, double[][] a):
-Calculates the solution to an equation using the matrix method. Will return null if the equation can't be solved.
-
+Calculates the solution to an equation using the matrix method. Will return null if the equation can't be solved. Equation Matrix m must be horizontal and answer a matrix must be vertical. Given the equation set x + y + z = 6, 2y + 5z = -4, and 2x + 5y - z = 27, the matrix should be as followed
+m = { {1, 1, 1}, {0, 2, 5}, {2, 5, -1} }
+a = { {6}, {-4}, {27} }
 int GCD(int a, int b):
 Finds the Greatest Common Divider between a and b.
 
