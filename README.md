@@ -5,6 +5,28 @@ A library of various math functions created as a DLL. Each function is listed as
 
 [short descriptions]
 
+## Set Operations
+
+**double[] ArrayToSet(double[] a):**
+
+Calculates set from array a. 
+
+**double[] UnionSet(double[] a, double[] b):**
+
+Returns the union of set a and set b.
+
+**double[] IntersectionSet(double[] a, double[] b):**
+
+Returns the intersection of set a and set b.
+
+**double[] ComplimentSet(double[] s, double[] a):**
+
+Gives the compliment of a given the universal set s.
+
+**double[] SubtractSet(double[] a, double[] b):**
+
+Subracts set b from set a.
+
 ## Sequencing
 
 **double GeometricSequence(double a, double r, double n):**
