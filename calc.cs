@@ -102,28 +102,20 @@ namespace MathExpanded
         {
             if (x.Length != y.Length)
             {
-                return null;
-            }
-            for (int i = 0; i < x.Length; i++)
-            {
-                if (x[i].Length != y[i].Length)
-                {
-                    return null;
-                }
+                throw new FormatException("Matrices must be the same size.");
             }
             if (x.Length == 0 || y.Length == 0 || x[0].Length == 0 || y[0].Length == 0)
             {
-                return null;
+                throw new FormatException("Matrices cannot be 0.");
             }
             for(int i=0; i<x.Length-1; i++)
             {
                 if (x[i].Length != x[i + 1].Length)
-                    return null;
-            }
-            for (int i = 0; i < y.Length - 1; i++)
-            {
+                    throw new FormatException("Matrices rows must be the same length.");
                 if (y[i].Length != y[i + 1].Length)
-                    return null;
+                    throw new FormatException("Matrices rows must be the same length.");
+                if (x[i].Length != y[i].Length)
+                    throw new FormatException("Matrices must be the same size.");
             }
             double[][] ans = new double[x.Length][];
             for (int i = 0; i < x.Length; i++)
@@ -141,28 +133,20 @@ namespace MathExpanded
         {
             if (x.Length != y.Length)
             {
-                return null;
-            }
-            for (int i = 0; i < x.Length; i++)
-            {
-                if (x[i].Length != y[i].Length)
-                {
-                    return null;
-                }
+                throw new FormatException("Matrices must be the same size.");
             }
             if(x.Length == 0 || y.Length == 0 || x[0].Length == 0 || y[0].Length==0)
             {
-                return null;
+                throw new FormatException("Matrices cannot be 0.");
             }
             for (int i = 0; i < x.Length - 1; i++)
             {
                 if (x[i].Length != x[i + 1].Length)
-                    return null;
-            }
-            for (int i = 0; i < y.Length - 1; i++)
-            {
+                    throw new FormatException("Matrices must be the same length.");
                 if (y[i].Length != y[i + 1].Length)
-                    return null;
+                    throw new FormatException("Matrices must be the same length.");
+                if (x[i].Length != y[i].Length)
+                    throw new FormatException("Matrices must be the same size.");
             }
             double[][] ans = new double[x.Length][];
             for (int i = 0; i < x.Length; i++)
@@ -178,11 +162,11 @@ namespace MathExpanded
         public static double[][] MultiplyMatrixByNumber(double n, double[][] m)
         {
             if (m.Length == 0)
-                return null;
+                throw new FormatException("Matrices cannot be 0.");
             for (int i = 0; i < m.Length - 1; i++)
             {
                 if (m[i].Length != m[i + 1].Length)
-                    return null;
+                    throw new FormatException("Matrix rows must be the same length.");
             }
             double[][] ans = new double[m.Length][];
 
@@ -200,21 +184,18 @@ namespace MathExpanded
         {
             if (x.Length == 0 || y.Length == 0 || x[0].Length == 0 || y[0].Length == 0)
             {
-                return null;
+                throw new FormatException("Matrix cannot be 0.");
             }
             if (x[0].Length != y.Length)
             {
-                return null;
+                throw new FormatException("Matrices not multipliable.");
             }
             for (int i = 0; i < x.Length - 1; i++)
             {
                 if (x[i].Length != x[i + 1].Length)
-                    return null;
-            }
-            for (int i = 0; i < y.Length - 1; i++)
-            {
+                    throw new FormatException("Matrix rows must be the same length.");
                 if (y[i].Length != y[i + 1].Length)
-                    return null;
+                    throw new FormatException("Matrix rows must be the same length.");
             }
             double[][] ans = new double[x.Length][];
             for (int i = 0; i < x.Length; i++)
@@ -232,16 +213,16 @@ namespace MathExpanded
             return ans;
         }
 
-        public static double? MatrixDeterminant(double[][] m)
+        public static double MatrixDeterminant(double[][] m)
         {
             if (m.Length == 0)
-                return null;
+                throw new FormatException("Matrix cannot be 0.");
             if (m.Length != m[0].Length)
-                return null;
+                throw new FormatException("Matrix must be square.");
             for (int i = 0; i < m.Length - 1; i++)
             {
                 if (m[i].Length != m[i + 1].Length)
-                    return null;
+                    throw new FormatException("Matrix rows must be the same length.");
             }
             if (m.Length == 2)
             {
@@ -249,7 +230,7 @@ namespace MathExpanded
             }
             else
             {
-                double? det = 0;
+                double det = 0;
                 for (int i = 0; i < m.Length; i++)
                 {
                     double[][] m1 = new double[m.Length - 1][];
@@ -278,13 +259,13 @@ namespace MathExpanded
         public static double[][] InverseMatrix(double[][] m)
         {
             if (m.Length == 0)
-                return null;
+                throw new FormatException("Matrix cannot be 0.");
             if (m.Length != m[0].Length)
-                return null;
+                throw new FormatException("Matrix must be square.");
             for (int i = 0; i < m.Length - 1; i++)
             {
                 if (m[i].Length != m[i + 1].Length)
-                    return null;
+                    throw new FormatException("Matrix rows must be the same length.");
             }
             double[][] m1 = new double[m.Length][];
             for (int i = 0; i < m.Length; i++)
@@ -357,22 +338,22 @@ namespace MathExpanded
         public static double[][] SolveByMatrix(double[][] m, double[][] a)
         {
             if (m.Length == 0 || a.Length == 0)
-                return null;
+                throw new FormatException("Matrices must both have values.");
             if (m.Length != a.Length)
-                return null;
+                throw new FormatException("Matrices must have the same number of columns.");
             for (int i = 0; i < m.Length - 1; i++)
             {
                 if (m[i].Length != m[i + 1].Length)
-                    return null;
+                    throw new FormatException("Matrix rows must be same length.");
             }
             for (int i = 0; i < a.Length; i++)
             {
                 if (a[i].Length != 1)
-                    return null;
+                    throw new FormatException("Answer Matrix must only have one row.");
             }
+            if (m.Length != m[0].Length)
+                throw new FormatException("Equation Matrix must be square.");
             double[][] minverse = InverseMatrix(m);
-            if (minverse == null)
-                return null;
             double[][] ans = MultiplyMatrices(minverse, a);
             return ans;
         }
@@ -397,7 +378,106 @@ namespace MathExpanded
         {
             return (a * b) / GCD(a, b);
         }
+        //------------------------------------------Fractions---------------------------------------
+        public static int[] DecimalToFraction(double x)
+        {
+            int count = 0;
+            while (x % 1 != 0)
+            {
+                x *= 10;
+                count++;
+            }
+            int b = (int)Math.Pow(10, count);
+            return SimplifyFraction(new int[] { (int)x, b });
+        }
 
+        public static int[] SimplifyFraction(int[] x)
+        {
+            if (x.Length != 2)
+                throw new FormatException("Array must contain two and only two values.");
+            int[] copy = new int[] { x[0], x[1] };
+            int g = GCD(copy[0], copy[1]);
+            copy[0] /= g;
+            copy[1] /= g;
+            return copy;
+        }
+        public static double FractionToDecimal(int[] x)
+        {
+            if (x.Length != 2)
+                throw new FormatException("Array must contain two and only two values.");
+            return x[0] / x[1];
+        }
+
+        public static double[] AddFractions(double[] x, double[] y)
+        {
+            if (x.Length != 2 || y.Length != 2)
+                throw new FormatException("Arrays must contain two and only two values.");
+            if (x[1] == y[1])
+            {
+                return new double[] {x[0] + y[0], x[1] };
+            }
+            else
+            {
+                double bottom = x[1] * y[1];
+                double top = x[0] * y[1] + y[0] * x[1];
+                if (bottom % 1 == 0 && top % 1 == 0)
+                {
+                    int[] hold = SimplifyFraction(new int[] {(int) top, (int) bottom });
+                    return new double[] {hold[0], hold[1]};
+                }
+                else return new double[] {top, bottom};
+                    
+            }
+        }
+
+        public static double[] SubtractFractions(double[] x, double[] y)
+        {
+            if (x.Length != 2 || y.Length != 2)
+                throw new FormatException("Arrays must contain two and only two values.");
+            if (x[1] == y[1])
+            {
+                return new double[] { x[0] - y[0], x[1] };
+            }
+            else
+            {
+                double bottom = x[1] * y[1];
+                double top = x[0] * y[1] - y[0] * x[1];
+                if (bottom % 1 == 0 && top % 1 == 0)
+                {
+                    int[] hold = SimplifyFraction(new int[] { (int)top, (int)bottom });
+                    return new double[] { hold[0], hold[1] };
+                }
+                else return new double[] { top, bottom };
+            }
+        }
+
+        public static double[] MultiplyFractions(double[] x, double[] y)
+        {
+            if (x.Length != 2 || y.Length != 2)
+                throw new FormatException("Arrays must contain two and only two values.");
+            double top = x[0] * y[0];
+            double bottom = x[1] * y[1];
+            if (bottom % 1 == 0 && top % 1 == 0)
+            {
+                int[] hold = SimplifyFraction(new int[] { (int)top, (int)bottom });
+                return new double[] { hold[0], hold[1]};
+            }
+            else return new double[] { top, bottom };
+        }
+
+        public static double[] DivideFractions(double[] x, double[] y)
+        {
+            if (x.Length != 2 || y.Length != 2)
+                throw new FormatException("Arrays must contain two and only two values.");
+            double top = x[0] * y[1];
+            double bottom = x[1] * y[0];
+            if (bottom % 1 == 0 && top % 1 == 0)
+            {
+                int[] hold = SimplifyFraction(new int[] { (int)top, (int)bottom });
+                return new double[] { hold[0], hold[1] };
+            }
+            else return new double[] { top, bottom };
+        }
         //------------------------------------------Factoring-----------------------------------------
         public static int[] Factors(int x)
         {
@@ -531,17 +611,17 @@ namespace MathExpanded
             if(x is null)
             {
                 if (y is null || p is null)
-                    return -1;
+                    throw new FormatException("Only one value can be null.");
                 return (double)y / ((double)p/100);
             }
             if(y is null)
             {
                 if (p is null || x is null)
-                    return -1;
+                    throw new FormatException("Only one value can be null.");
                 return ((double)p / 100) * (double)x;
             }
             if (y is null || x is null)
-                return -1;
+                throw new FormatException("Only one value can be null.");
             return (double)y / (double)x;
         }
         //-------------------------------------------Shape operations-----------------------------------------
@@ -669,27 +749,6 @@ namespace MathExpanded
             ans[1] = (-Discriminant(a,b,c)) / (4*a);
             return ans;
         }
-
-        //------------------------------------------Fractions---------------------------------------
-        public static int[] DecimalToFraction(double x)
-        {
-            int count = 0;
-            while (x % 1 != 0)
-            {
-                x *= 10;
-                count++;
-            }
-            int b = (int)Math.Pow(10, count);
-            int g = GCD((int)x, b);
-            b = b / g;
-            x = x / g;
-            return new int[] { (int)x, b };
-        }
-
-        public static double FractionToDecimal(int[] x)
-        {
-            return x[0] / x[1];
-        }
         //------------------------------------------Averages-----------------------------------------
         public static double meanAverage(double[] a)
         {
@@ -766,17 +825,17 @@ namespace MathExpanded
             if (r is null)
             {
                 if (d is null || t is null)
-                    return -1;
+                    throw new FormatException("Only one value can be null.");
                 return (double)d / (double)t;
             }
             if(t is null)
             {
                 if (d is null || r is null)
-                    return -1;
+                    throw new FormatException("Only one value can be null.");
                 return (double)d / (double)r;
             }
             if (r is null || t is null)
-                return -1;
+                throw new FormatException("Only one value can be null.");
             return (double)r * (double)t;
         }
     }
