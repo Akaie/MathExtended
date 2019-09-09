@@ -45,6 +45,17 @@ Calculates the Geometric Sequence where a is is the starting term, r is the rate
 
 Calculates the Arithmetic Sequence where a is the starting term, n is the desired nth position in the sequence and d is the growth of the sequence.
 
+**int TriangularSequence(int n):**
+
+Gets the nth ideration of the triangular Sequence.
+
+**int FibonacciSequence(int n):**
+
+Gets the nth ideration of the Fibonacci Sequence.
+
+**int CatalanSequence(int n):**
+
+Gets the nth ideration of the Catalan Sequence.
 ## Matrix Operations
 
 **double[][] AddMatrix(double[][] x, double[][] y):**
