@@ -162,7 +162,7 @@ Calculates the standard deviation for a set of sample data.
 
 Calculates the z-score of a normal distribution given a value x, the mean of m, and the standard deviation of d.
 
-**double zScoureWithValues(double x, double[] a):**
+**double zScoreWithValues(double x, double[] a):**
 
 Calculates the z-score of a normal distribution given the value x and the set of data a.
 
