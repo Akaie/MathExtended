@@ -49,29 +49,27 @@ Calculates the Arithmetic Sequence where a is the starting term, n is the desire
 
 **double[][] AddMatrix(double[][] x, double[][] y):**
 
-Adds the matrices x and y together. Will return null of the matrices can't be added.
+Adds the matrices x and y together.
 
 **double[][] SubtractMatrix(double[][] x, double[][] y):**
 
-Subtracts matrix y from matrix x. Will return null if matrices can't be subtracted.
+Subtracts matrix y from matrix x.
 
 **double[][] MultiplyMatrixByNumber(double n, double[][] m):**
 
-Multiplies the matrix m by the coefficent n. Will return null if matrix size is 0.
+Multiplies the matrix m by the coefficent n.
 
 **double[][] MultiplyMatrices(double[][] x, double[][] y):**
 
-Multiples the matrices x and y together. Will return null if one of the matrixes is 0 or if multiplication can't be done.
+Multiples the matrices x and y together.
 
 **double? MatrixDetermient(double[][] m):**
 
-Finds the Determient of the matrix m. Will return null if matrix is 0, or matrix is not square.
+Finds the Determient of the matrix m.
 
 **double[][] InverseMatrix(double[][] m):**
 
-Finds the inverse matrix of the matrix m. Will return null if matrix is 0 or matrix does not have a determient.
-
-## Equation Solving
+Finds the inverse matrix of the matrix m.
 
 **double[][] SolveByMatrix(double[][] m, double[][] a):**
 
@@ -92,6 +90,36 @@ Finds the Greatest Common Divider between a and b.
 **int LCM(int a, int b):**
 
 Finds the Least Common Multiple between a and b.
+
+## Fraction Operations
+
+**int[] DecimalToFraction(double x):**
+
+Finds the fractional form of the decimal number x.
+
+**int[] SimplifyFraction(int[] x):**
+
+Simplifies the fraction x[0] / x[1].
+
+**double FractionToDecimal(int[] x):**
+
+Returns the decimal value of the fraction x[0] / x[1].
+
+**double[] AddFrazctions(double[] x, double[] y):**
+
+Adds the fractions x[0] / x[1] and y[0] / y[1].
+
+**double[] SubractFractions(double[] x, double[] y):**
+
+Subracts the fraction y[0] / y[1] from x[0] / x[1].
+
+**double[] MultiplyFractions(double[] x, double[] y):**
+
+Multiplies the fractions x[0] / x[1] and y[0] / y[1].
+
+**double[] DivideFractions(double[] x, double[] y):**
+
+Divides the fraction x[0] / x[1] by y[0] / y[1].
 
 ## Factoring
 
@@ -278,16 +306,6 @@ Calculates the discrimiant of a quadratic equation given the form ax^2 + bx + c 
 **double vertexOfParabola(double a, double b, double c):**
 
 Calculates the vertex of a parabola given the form ax^2 + bx + c = 0.
-
-## Fraction Operations
-
-**int[] DecimalToFraction(double x):**
-
-Returns the the decimal x in a fractional version with the numerator being int[0] and the demoninator being int[1];
-
-**double FractionToDecimal(int[] x):**
-
-Returns the fraction x with the numerator being x[0] and denominator being x[1] as a decimal.
 
 ## Averages
 **double meanAverage(double[] a):**
