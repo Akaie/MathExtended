@@ -88,7 +88,7 @@ namespace MathExpanded
             }
             return true;
         }
-        //-------------------------------------------Geometric and arithmetic----------------------------
+        //-------------------------------------------Sequences----------------------------
         public static double GeometricSequence(double a, double r, double n)
         {
             return a * (1 - Math.Pow(r, n)) / (1 - r);
@@ -96,6 +96,29 @@ namespace MathExpanded
         public static double ArithmeticSequence(double a, double n, double d)
         {
             return a + ((n - 1) * d);
+        }
+        public static int TriangularSequence(int n)
+        {
+            return (n * (n + 1)) / 2;
+        }
+
+        public static int FibonacciSequence(int n)
+        {
+            if (n <= 1)
+                return n;
+            return FibonacciSequence(n - 1) + FibonacciSequence(n - 2);
+        }
+
+        public static int CatalanSequence(int n)
+        {
+            if (n <= 1)
+                return 1;
+            int s = 0;
+            for (int i = 0; i <= n - 1; i++)
+            {
+                s += + CatalanSequence(i) * CatalanSequence(n - 1 - i);
+            }
+            return s;
         }
         //------------------------------------------Matrix Operations------------------------------------
         public static double[][] AddMatrix(double[][] x, double[][] y)
