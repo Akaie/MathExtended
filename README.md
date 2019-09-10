@@ -234,6 +234,7 @@ Calculates the geometric mean of the dataset a. All values of a must be greater 
 Calculates the weighted geometric mean for the dataset a. w and a must be the same length and all w values must be postitive. Additionally, at least one weight must be greater then 0.
 
 **double HarmonicMean(double[] a):**
+
 Calculates the harmonic mean of the dataset a. All values of a must be greater then 0.
 
 **double WeightedHarmonicMean(double[] a, double[] w):**
@@ -264,6 +265,7 @@ Calculates the truncated mean by taking tp% total from the dataset a, or (tp/2)%
 Calculates the truncated mean by taking tp% total from the dataset a, or (tp/2)% from each side. Takes reduced weight from the innermost removed items. For example, if the number to be taken from each side is 2.7, it would remove 2 and take 30% of the 3rd values in.
 
 **double InterquartileMean(double[] a):**
+
 Calculates the interquartile mean of the dataset a.
 
 **double WinsorizedMean(double[] a, double tp):**
