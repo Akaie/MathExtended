@@ -181,6 +181,8 @@ Calculates the Coefficient of the Variation for the dataset a. s is true if the 
 
 Calculates the Standard Error of the dataset a. s is true if the a is a sample, false if a is a full population.
 
+### Classical Average Operations
+
 **double MeanAverage(double[] a):**
 
 Calculates the mean average of the set of data a.
@@ -201,6 +203,8 @@ Calculates the range of the data set a.
 
 Calculates the midrange of the dataset a.
 
+### Quartile Operations
+
 **double FirstQuartile(double[] a):**
 
 Calculates the first quartile of the dataset a.
@@ -220,6 +224,8 @@ Calculates the interquatile range of the dataset a.
 **double Midhinge(double[] a):**
 
 Calculates the midhinge of the dataset a.
+
+### Other Means
 
 **double WeightedMean(double [] a, double [] w):**
 
