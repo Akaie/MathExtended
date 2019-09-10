@@ -161,23 +161,114 @@ Calculates the midpoint of the line between the points a1 and a2. a1 and a2 shou
 Calculates the slope and y-intercept given the two points a1 and a2. Returns slope as double[0] and y-intercept as double[1].
 
 ## Statistic Operations
-**double StandardDeviationFull(double[] m):**
+**double StandardDeviation(double[] m, bool s):**
 
-Calculates the standard deviation for a set of complete data.
+Calculates the standard deviation for a set of data. s is true if the m is a sample, false if m is a full population.
 
-**double StandardDeviationSample(double[] m):**
+**double ZScore(double x, double[] a, bool s):**
 
-Calculates the standard deviation for a set of sample data.
+Calculates the z-score of a normal distribution given a value x and the dataset of a. s is true if the a is a sample, false if a is a full population.
 
-**double ZScore(double x, double m, double d):**
+**double Variance(double[] a, bool s):**
 
-Calculates the z-score of a normal distribution given a value x, the mean of m, and the standard deviation of d.
+Calculates the Variance of a. s is true if the a is a sample, false if a is a full population.
 
-**double ZScoreWithValues(double x, double[] a):**
+**double CoefficientOfVariation(double[] a, bool s):**
 
-Calculates the z-score of a normal distribution given the value x and the set of data a.
+Calculates the Coefficient of the Variation for the dataset a. s is true if the a is a sample, false if a is a full population.
 
+**double StandardError(double[] a, bool s):**
 
+Calculates the Standard Error of the dataset a. s is true if the a is a sample, false if a is a full population.
+
+**double MeanAverage(double[] a):**
+
+Calculates the mean average of the set of data a.
+
+**double ModeAverage(double[] a):**
+
+Calculates the mode average of the set of data a.
+
+**double MedianAverage(double[] a):**
+
+Calculates the median average of the set of data a.
+
+**double RangeAverage(double[] a):**
+
+Calculates the range of the data set a.
+
+**double MidrangeAverage(double[] a):**
+
+Calculates the midrange of the dataset a.
+
+**double FirstQuartile(double[] a):**
+
+Calculates the first quartile of the dataset a.
+
+**double SecondQuartile(double[] a):**
+
+Calculates the second quartile of the dataset a.
+
+**double ThirdQuartile(double[] a):**
+
+Calculates the third quartile of the dataset a.
+
+**double InterquatileRange(double[] a):**
+
+Calculates the interquatile range of the dataset a.
+
+**double Midhinge(double[] a):**
+
+Calculates the midhinge of the dataset a.
+
+**double WeightedMean(double [] a, double [] w):**
+
+Calculates the weighted mean of the dataset a where w[x] is the weight of a[x]. w and a must be the same length and all w values must be postitive. Additionally, at least one weight must be greater then 0.
+
+**double GeometricMean(double[] a):**
+
+Calculates the geometric mean of the dataset a. All values of a must be greater then 0.
+
+**double WeightedGeometricMean(double[] a, double[] w):**
+
+Calculates the weighted geometric mean for the dataset a. w and a must be the same length and all w values must be postitive. Additionally, at least one weight must be greater then 0.
+
+**double HarmonicMean(double[] a):**
+Calculates the harmonic mean of the dataset a. All values of a must be greater then 0.
+
+**double WeightedHarmonicMean(double[] a, double[] w):**
+
+Calulates the weighted harmonic mean of the dataset a. All values of a must be greater then 0. w and a must be the same length. w values cannot be negative. At least one value of w must be greater then 0.
+
+**double GeneralizedMean(double[] a, double p):**
+
+Calculates the generalized mean of the dataset a according to the p-norm p.
+
+**double QuadraticMean(double[] a):**
+
+Calculates the quadratic mean of the dataset a.
+
+**double CubicMean(double[] a):**
+
+Calculates the cubic mean of the dataset a.
+
+**double ModifiedMean(double[] a):**
+
+Calculates the modified mean, discarding the first and last values and calculating the mean of the remaining values.
+
+**double RoundedTruncatedMean(double[] a, int tp):**
+
+Calculates the truncated mean by taking tp% total from the dataset a, or (tp/2)% from each side. Rounds the number of items taken to the nearest whole number. For example, if the number to be taken from each side is 2.7, it rounds to 3 and takes 3 from each side.
+
+**double TruncatedMean(double[] a, int tp):**
+Calculates the truncated mean by taking tp% total from the dataset a, or (tp/2)% from each side. Takes reduced weight from the innermost removed items. For example, if the number to be taken from each side is 2.7, it would remove 2 and take 30% of the 3rd values in.
+
+**double InterquartileMean(double[] a):**
+Calculates the interquartile mean of the dataset a.
+
+**double WinsorizedMean(double[] a, double tp):**
+
+Calculates the winsorized mean of the dataset at, replaing tp% of the dataset with the upper and lower values, or (tp/2)% of each side.
 ## Factorial
 **int Factorial(int n):**
 
@@ -317,23 +408,6 @@ Calculates the discrimiant of a quadratic equation given the form ax^2 + bx + c 
 **double VertexOfParabola(double a, double b, double c):**
 
 Calculates the vertex of a parabola given the form ax^2 + bx + c = 0.
-
-## Averages
-**double MeanAverage(double[] a):**
-
-Calculates the mean average of the set of data a.
-
-**double ModeAverage(double[] a):**
-
-Calculates the mode average of the set of data a.
-
-**double MedianAverage(double[] a):**
-
-Calculates the median average of the set of data a.
-
-**double RangeAverage(double[] a):**
-
-Calculates the range of the data set a.
 
 ## Distance Rate and Time
 **double DistanceRateTime(double? r, double? t, double? d):**
