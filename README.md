@@ -6,35 +6,35 @@ A library of various math functions created as a DLL. Each function is listed as
 [short descriptions]
 
 ## Table of Contents
-[Set Operations](#Set Operations)
+[Set Operations](#Set-Operations)
 
 [Sequencing](#Sequencing)
 
-[Matrix Operations](#Matrix Operations)
+[Matrix Operations](#Matrix-Operations)
 
-[Greatest Common Divider and Least Common Multiple](#Greatest Common Divider and Least Common Multiple)
+[Greatest Common Divider and Least Common Multiple](#Greatest-Common-Divider-and-Least-Common-Multiple)
 
-[Fraction Operations](#Fraction Operations)
+[Fraction Operations](#Fraction-Operations)
 
 [Factoring](#Factoring)
 
-[Point Operations](#Point Operations)
+[Point Operations](#Point-Operations)
 
-[Statistic Operations](#Statistic Operations)
+[Statistic Operations](#Statistic-Operations)
 
 [Factorial](#Factorial)
 
-[Permutation and Combinations](#Permutation and Combinations)
+[Permutation and Combinations](#Permutation-and-Combinations)
 
-[Probability and Percent](#Probability and Percent)
+[Probability and Percent](#Probability-and-Percent)
 
-[Shape Operations](#Shape Operations)
+[Shape Operations](#Shape-Operations)
 
-[Pythagorean Theorem](#Pythagorean Theorem)
+[Pythagorean Theorem](#Pythagorean-Theorem)
 
-[Quadratic Operations](#Quadratic Operations)
+[Quadratic Operations](#Quadratic-Operations)
 
-[Distance Rate and Time](#Distance Rate and Time)
+[Distance Rate and Time](#Distance-Rate-and-Time)
 
 ## Set Operations
 
