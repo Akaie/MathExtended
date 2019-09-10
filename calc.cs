@@ -719,7 +719,7 @@ namespace MathExpanded
                 ansBottom += w[i];
             }
             if (ansBottom == 0)
-                throw new FormatException("At leat one weight must be greater then 0.");
+                throw new FormatException("At least one weight must be greater then 0.");
             return ansTop / ansBottom;
         }
         public static double GeometricMean(double[] a)
@@ -742,9 +742,13 @@ namespace MathExpanded
             double ans = 1;
             for (int i = 0; i < a.Length; i++)
             {
+                if (w[i] < 0)
+                    throw new FormatException("Weight cannot be negative");
                 weightTotal += w[i];
                 ans *= Math.Pow(a[i], w[i]);
             }
+            if (weightTotal == 0)
+                throw new FormatException("At least one weight must be greater then 0.");
             return Math.Pow(ans, 1 / weightTotal);
         }
         public static double HarmonicMean(double[] a)
@@ -768,9 +772,13 @@ namespace MathExpanded
             {
                 if (a[i] <= 0)
                     throw new FormatException("All values must be greater then 0.");
+                if (w[i] < 0)
+                    throw new FormatException("Weight cannot be negative");
                 totalWeights += w[i];
                 ans += w[i] / a[i];
             }
+            if (totalWeights == 0)
+                throw new FormatException("At least one weight must be greater then 0.");
             return totalWeights / ans;
         }
         public static double GeneralizedMean(double[] a, double p)
@@ -834,12 +842,10 @@ namespace MathExpanded
                 if (i == whole || i == b.Length - whole - 1)
                 {
                     ans += b[i] * (1.0 - fract);
-                    Console.WriteLine(i + ": " + b[i] + "*" + (1.0 - fract));
                 }
                 else
                 {
                     ans += b[i];
-                    Console.WriteLine(i + ": " + b[i]);
                 }
             }
             return ans / left;
